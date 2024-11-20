@@ -35,3 +35,4 @@ const Enrollment = sequelize.define(
         timestamps: true
     }
 )
+export{Enrollment}
