@@ -6,9 +6,10 @@ const Fee = sequelize.define(
     'Fees',
     {
     feeId: {
-        type: DataTypes.UUID,
-        primaryKey: true,
-        autoIncrement: true, // Automatically incrementing ID
+            type: DataTypes.UUID,
+            allowNull: false,
+            primaryKey: true,
+            defaultValue: DataTypes.UUIDV4
     },
     studentId: {
         type: DataTypes.UUID,

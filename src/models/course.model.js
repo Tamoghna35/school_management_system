@@ -1,6 +1,7 @@
 import { sequelize } from "../db/index.js";
 import { DataTypes, UUIDV4 } from "sequelize";
 import { Teacher } from "./teacher.model.js";
+import { Department } from "./department.model.js";
 
 
 const Course = sequelize.define(

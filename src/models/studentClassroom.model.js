@@ -2,7 +2,7 @@ import { sequelize } from "../db/index.js";
 import { DataTypes } from "sequelize";
 import { Student } from "./student.model.js";
 import { Teacher } from "./teacher.model.js";
-
+import { Classroom } from "./classroom.model.js";
 const StudentClassRoom = sequelize.define(
     "StudentClassRoom",
     {

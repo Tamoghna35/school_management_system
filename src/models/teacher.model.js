@@ -1,6 +1,7 @@
 import { sequelize } from "../db/index.js";
 import { DataTypes } from "sequelize";
-
+import { Department } from "./department.model.js";
+import { TeacherType } from "./teacherType.model.js";
 const Teacher = sequelize.define(
     "Teacher",
     {
@@ -25,6 +26,7 @@ const Teacher = sequelize.define(
             type: DataTypes.ENUM('Male', 'Female', 'Other'), // Defining gender options as an ENUM
             allowNull: false,
         },
+
         teacherAddress: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -43,6 +45,11 @@ const Teacher = sequelize.define(
             validate: {
                 isEmail: true, // Basic email validation
             },
+        },
+        role: {
+            type: DataTypes.ENUM('Teacher', 'Student', 'Parent'),
+            allowNull: false,
+            defaultValue: 'Teacher', // Default for the teacher model
         },
         departmentId: {
             type: DataTypes.UUID,

@@ -1,6 +1,6 @@
 import { sequelize } from "../db/index.js";
 import { DataTypes } from "sequelize";
-import { Student } from "./student.model";
+import { Student } from "./student.model.js";
 import { Classroom } from "./classroom.model.js";
 
 const Attendence = sequelize.define(
@@ -9,7 +9,7 @@ const Attendence = sequelize.define(
         attendanceId: {
             type: DataTypes.UUID,
             primaryKey: true,
-            autoIncrement: true,
+            // autoIncrement: true,
             defaultValue: DataTypes.UUIDV4
         },
         studentId: {
@@ -23,7 +23,7 @@ const Attendence = sequelize.define(
             onDelete: 'CASCADE',
         },
         classroomId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
             allowNull: false,
             references: {
                 model: Classroom, // Table name

@@ -29,6 +29,11 @@ const Parent = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        role: {
+            type: DataTypes.ENUM('Teacher', 'Student', 'Parent'),
+            allowNull: false,
+            defaultValue: 'Parent', // Default for the parent model
+        },
         dob: {
             type: DataTypes.DATEONLY, // Use DATEONLY if only the date is needed without time
             allowNull: false,

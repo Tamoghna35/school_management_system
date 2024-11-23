@@ -6,8 +6,9 @@ import { Library } from "./library.model.js";
 const BorrowedBooks = sequelize.define('BorrowedBooks', {
     borrowBookId: {
         type: DataTypes.UUID,
+        allowNull: false,
         primaryKey: true,
-        autoIncrement: true, // Automatically incrementing ID
+        defaultValue: DataTypes.UUIDV4
     },
     studentId: {
         type: DataTypes.UUID,

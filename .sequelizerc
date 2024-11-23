@@ -1,0 +1,20 @@
+// // .sequelizerc
+// import path from 'path';
+
+// export default {
+//     'migrations-path': path.resolve('src', 'migrations'),
+//     'models-path': path.resolve('src', 'models'),
+//     'seeders-path': path.resolve('src', 'seeders'),
+//     'config': path.resolve('src', 'config', 'config.js'),  // Point to the config.js file
+// };
+
+
+// .sequelizerc
+const path = require('path');
+
+module.exports = {
+    'migrations-path': path.resolve('src', 'migrations'),
+    'models-path': path.resolve('src', 'models'),
+    'seeders-path': path.resolve('src', 'seeders'),
+    'config': path.resolve('src', 'config', 'config.cjs') // Point to the config.js file
+};

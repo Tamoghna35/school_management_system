@@ -4,8 +4,9 @@ import { DataTypes } from "sequelize";
 const Department = sequelize.define('Department', {
     departmentId: {
         type: DataTypes.UUID,
+        allowNull: false,
         primaryKey: true,
-        autoIncrement: true, // Automatically incrementing ID
+        defaultValue: DataTypes.UUIDV4
     },
     departmentName: {
         type: DataTypes.STRING,

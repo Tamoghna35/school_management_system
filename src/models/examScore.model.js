@@ -7,7 +7,8 @@ const ExamScore = sequelize.define('ExamScore', {
     examScoreId: {
         type: DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true, // Automatically incrementing ID
+        // autoIncrement: true, // Automatically incrementing ID
+        defaultValue: DataTypes.UUIDV4
     },
     examId: {
         type: DataTypes.UUID,

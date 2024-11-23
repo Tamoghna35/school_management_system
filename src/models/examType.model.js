@@ -7,9 +7,9 @@ const ExamType = sequelize.define(
     {
         examTypeId: {
             type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
-            autoIncrement: true,
-            primaryKey: true
+            allowNull: false,
+            primaryKey: true,
+            defaultValue: DataTypes.UUIDV4
         },
         ExamType: {
             type: DataTypes.ENUM("Midterm", "Final", "Quiz"),

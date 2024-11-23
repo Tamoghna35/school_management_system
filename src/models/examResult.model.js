@@ -10,8 +10,9 @@ const ExamResult = sequelize.define(
     {
         examResultId: {
             type: DataTypes.UUID,
+            allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            defaultValue: DataTypes.UUIDV4
         },
         StudentID: {
             type: DataTypes.UUID,
@@ -46,4 +47,4 @@ const ExamResult = sequelize.define(
     timestamps: false,        // Disable createdAt and updatedAt
 });
 
-module.exports = ExamResult;
+export {ExamResult}

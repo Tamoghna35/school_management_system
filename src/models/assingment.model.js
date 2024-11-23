@@ -5,8 +5,9 @@ import { Course } from "./course.model.js";
 const Assignment = sequelize.define('Assignment', {
     assignmentId: {
         type: DataTypes.UUID,
+        allowNull: false,
         primaryKey: true,
-        autoIncrement: true, // Automatically incrementing ID
+        defaultValue: DataTypes.UUIDV4
     },
     assignmentName: {
         type: DataTypes.STRING,

@@ -1,14 +1,14 @@
 import { sequelize } from "../db/index.js";
 import { DataTypes } from "sequelize";
 import { Course } from "./course.model.js";
-
+import { ExamType } from "./examType.model.js";
 const Exam = sequelize.define(
     "Exam",
     {
         examId: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
-            autoIncrement: true,
+            // autoIncrement: true,
             primaryKey: true
         },
         examName: {

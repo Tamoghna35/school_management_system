@@ -5,7 +5,8 @@ const Library = sequelize.define('Library', {
     libraryId: {
         type: DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true, // Automatically incrementing ID
+        // autoIncrement: true, // Automatically incrementing ID
+        defaultValue: DataTypes.UUIDV4
     },
     bookTitle: {
         type: DataTypes.STRING,
@@ -23,11 +24,12 @@ const Library = sequelize.define('Library', {
     quantity: {
         type: DataTypes.UUID,
         allowNull: false, // Ensures the field is mandatory
-        defaultValue: 0, // Default quantity is 0
+        defaultValue: DataTypes.UUIDV4, // Default to a generated UUID
         validate: {
-            min: 0, // Ensures quantity cannot be negative
+            min: 0, // You may need to adjust this since UUIDs can't be negative
         },
     },
+
 }, {
 
     timestamps: true, // Disables createdAt and updatedAt fields
